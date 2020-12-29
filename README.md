@@ -23,10 +23,10 @@ loess package (https://pypi.org/project/loess/)
 
 # Usage example (using jupyter notebook or similar) 
 
-```from LORACCS import LORACCS
+```from LORACCS import LORACCS```
 
-outdir = 'the filepath of the directory to which you would like the corrected image and associated outputs saved'
-ref_img_fp = 'the filepath of the image to be used as reference'
-tgt_img_fp = 'the filepath of the image to be corrected'
+```outdir = 'the filepath of the directory to which you would like the corrected image and associated outputs saved'```
+```ref_img_fp = 'the filepath of the image to be used as reference'```
+```tgt_img_fp = 'the filepath of the image to be corrected'```
 
-LORACCS(outdir, ref_img_fp, tgt_img_fp)```
+```LORACCS(outdir, ref_img_fp, tgt_img_fp)```
