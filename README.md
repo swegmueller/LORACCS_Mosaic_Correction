@@ -19,7 +19,7 @@ The required packages are provided in the requirments.txt found in this reposito
 If using an Anaconda environment, the only package that requires pip install is the 
 loess package (https://pypi.org/project/loess/)
 
-pip install loess
+```pip install loess```
 
 # Usage example (using jupyter notebook or similar) 
 
@@ -29,9 +29,4 @@ outdir = 'the filepath of the directory to which you would like the corrected im
 ref_img_fp = 'the filepath of the image to be used as reference'
 tgt_img_fp = 'the filepath of the image to be corrected'
 
-LORACCS(outdir, ref_img_fp, tgt_img_fp)
-
-
-
-
-
+LORACCS(outdir, ref_img_fp, tgt_img_fp)```
