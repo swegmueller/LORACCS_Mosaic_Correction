@@ -29,7 +29,7 @@ pip install loess
 ref_img_fp = 'the filepath of the image to be used as reference'
 tgt_img_fp = 'the filepath of the image to be corrected'
 
-LORACCS(outdir, ref_img_fp, tgt_img_fp) ```
+```LORACCS(outdir, ref_img_fp, tgt_img_fp)
 
 
 
