@@ -1,8 +1,9 @@
 # LORACCS
 This is the code to run the LOESS Radiometric Correction for Contiguous Scenes (LORACCS). 
 
-The paper corresponding to this work is published in the open source International 
-Journal of Applied Earth Observations and Geoinformation.
+The paper corresponding to this work is pending publication in the open source International 
+Journal of Applied Earth Observations and Geoinformation. The link will be pasted
+here when available.
 
 LORACCS was developed to create seamless mosaics using Planet Dove imagery from the same day,
 though it should work with other image sources, too.  It is mostly beneficial when trying to 
