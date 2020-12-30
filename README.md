@@ -27,6 +27,11 @@ loess package (https://pypi.org/project/loess/)
 The rest should be available via conda forge.  I've tested this with Python 3.7 and 3.8.
 
 # Usage example (using jupyter notebook or similar) 
+
+Before using LORACCS, I HIGHLY recommend you mask the images first to get rid of any
+bad pixels. For Dove imagery, this can be doing with the included UDM and UDM2 files.
+This produces much better results.
+
 ```
 from LORACCS import LORACCS
 
