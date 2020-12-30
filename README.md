@@ -12,7 +12,7 @@ area should be representative of the full scene  (for example, if the image is m
 the overlap area should have a lot of forest).
 
 # Installation
-LORACCS was formatted as a python class, and can be run by simply downloading 
+LORACCS is formatted as a python class for ease of use, and can be run by simply downloading 
 LORACCS.py and importing the class.  
 
 The required packages are provided in the requirments.txt found in this repository.
