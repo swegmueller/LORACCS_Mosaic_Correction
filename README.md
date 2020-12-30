@@ -1,5 +1,5 @@
 # LORACCS
-This is the code to run the LOESS Radiometric Correction for Contiguous Scenes (LORACCS). 
+This is the Python code to run the LOESS Radiometric Correction for Contiguous Scenes (LORACCS). 
 
 The paper corresponding to this work is pending publication in the open source International 
 Journal of Applied Earth Observations and Geoinformation. The link will be pasted
@@ -15,12 +15,16 @@ the overlap area should have a lot of forest).
 LORACCS was formatted as a python class, and can be run by simply downloading 
 LORACCS.py and importing the class.  
 
-The required packages are provided in the requirments.txt found in this repository. 
+The required packages are provided in the requirments.txt found in this repository.
+In particular, you'll need fiona, pandas and geopandas, matplotlib, numpy, gdal,
+rasterio, shapely, and loess.
 
 If using an Anaconda environment, the only package that requires pip install is the 
 loess package (https://pypi.org/project/loess/)
 
 ```pip install loess```
+
+The rest should be available via conda forge.  I've tested this with Python 3.7 and 3.8.
 
 # Usage example (using jupyter notebook or similar) 
 ```
