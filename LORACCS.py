@@ -28,20 +28,19 @@ class LORACCS():
     - tgt_img_fp = target image (image to be normalized) filepath
 
     Optional paremeters:
-    - band_list = list of bands as integers, default is [1, 2, 3, 4]
+    - band_list = list of bands as int, default is [1, 2, 3, 4]
     - band_names = list of band names as strings, default is ['Blue', 'Green', 'Red', 'NIR']
-    - max_spectra = list of maximum reasonable spectral values in the images. This is used to 
+    - max_spectra = list of maximum reasonable spectral values in the images as int. This is used to 
                     mitigate errors and avoid excessive processing time caused by bad pixels.
                     Default is [3000, 3000, 3000, 8000], corresponding to BGR and NIR, respectively. 
+      
+      IMPORTANT: The optional parameters above (expect loess_frac) MUST be the same length. For example, if 5 bands are
+                 used, five names and five max_spectra must also be provided.
+                    
     - loess_frac = float, percent of pixel values to consider when fitting model. Default is 0.15.
                    Higher values will result in a less conformed curve (may risk underfitting), and
                    lower values more conformed (may risk overfitting). Recommend adjusting up by 0.05
                    increments if results are poor.
-
-    IMPORTANT: The optional parameters above MUST be the same length. For example, if 5 bands are
-               used, five names and five max_spectra must also be provided.
-
-    Other parameters:
     - delete_working_files= Boolean, whether or not to delete the files generated
                             during the program. If True, the transformed image, graph of the model, 
                             and dataframe with normalized RMSE values are retained 
