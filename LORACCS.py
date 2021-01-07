@@ -33,6 +33,10 @@ class LORACCS():
     - max_spectra = list of maximum reasonable spectral values in the images. This is used to 
                     mitigate errors and avoid excessive processing time caused by bad pixels.
                     Default is [3000, 3000, 3000, 8000], corresponding to BGR and NIR, respectively. 
+    - loess_frac = float, percent of pixel values to consider when fitting model. Default is 0.15.
+                   Higher values will result in a less conformed curve (may risk underfitting), and
+                   lower values more conformed (may risk overfitting). Recommend adjusting up by 0.05
+                   increments if results are poor.
 
     IMPORTANT: The optional parameters above MUST be the same length. For example, if 5 bands are
                used, five names and five max_spectra must also be provided.
@@ -51,6 +55,7 @@ class LORACCS():
                  band_list=[1, 2, 3, 4], 
                  band_names=['Blue', 'Green', 'Red', 'NIR'],
                  max_spectra = [3000, 3000, 3000, 8000],
+                 loess_frac=0.15,
                  delete_working_files=True):   
         
         os.chdir(outdir)
@@ -73,7 +78,7 @@ class LORACCS():
 
             # Do LORACCS normalization
             loraccs_array = self.run_loraccs(ref_img_band, tgt_img_band, band, band_names[num],
-                                             max_spectra[num], tgt_img_fp, outdir)
+                                             max_spectra[num], loess_frac, tgt_img_fp, outdir)
 
             # Write transformed array to new image
             with rasterio.Env():
@@ -307,7 +312,7 @@ class LORACCS():
         return new_y
 
     def run_loraccs(self, ref_img_band, tgt_img_band, band_num, band_name, 
-                    band_max_spectra, tgt_img_fp, outdir):
+                    band_max_spectra, loess_frac, tgt_img_fp, outdir):
         
         '''
         Runs the LORACCS method.
@@ -406,7 +411,7 @@ class LORACCS():
         y = stats_df_valid.Mean.values
 
         # Run LOESS
-        xout, yout, wout = loess_1d(x, y, frac=0.15, degree=2, rotate=False)
+        xout, yout, wout = loess_1d(x, y, frac=loess_frac, degree=2, rotate=False)
 
         # Save values into the dataframe
         stats_df_valid['Mean_LOESS'] = yout
@@ -686,5 +691,3 @@ class LORACCS():
         nrmse_df.to_csv('NRMSE_per_band.csv')
 
         return nrmse_df
-        
-            
