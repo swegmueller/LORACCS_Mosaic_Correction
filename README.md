@@ -1,7 +1,7 @@
 # LORACCS
 This is the Python code to run the LOESS Radiometric Correction for Contiguous Scenes (LORACCS). 
 
-The paper corresponding to this work is pending publication in the open source International 
+The paper corresponding to this work is published in the open source International 
 Journal of Applied Earth Observations and Geoinformation:
 https://authors.elsevier.com/sd/article/S0303-2434(20)30933-8
 
