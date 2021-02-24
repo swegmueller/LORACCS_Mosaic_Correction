@@ -306,10 +306,11 @@ class LORACCS():
         Function to extrapolate missing spectral values in LORACCS model
         by drawing a line between the nearest LOESS values
         '''
-        m = (y2-y1)/(x2-x1)
-        b = y1 - (m*x1)
-        new_y = int((m*new_x) + b)
-        return new_y
+        m = (float(y2)-float(y1))/(float(x2)-float(x1))
+        b = y1 - (m*float(x1))
+        new_y = (m*new_x) + b
+    
+        return int(new_y)
 
     def run_loraccs(self, ref_img_band, tgt_img_band, band_num, band_name, 
                     band_max_spectra, loess_frac, tgt_img_fp, outdir):
