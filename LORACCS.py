@@ -303,7 +303,7 @@ class LORACCS():
 
     def get_new_spec_val(self, x1, x2, y1, y2, new_x):
         '''
-        Fucntion to extrapolate missing spectral values in LORACCS model
+        Function to extrapolate missing spectral values in LORACCS model
         by drawing a line between the nearest LOESS values
         '''
         m = (y2-y1)/(x2-x1)
