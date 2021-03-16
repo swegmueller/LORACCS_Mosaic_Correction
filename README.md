@@ -1,15 +1,17 @@
 # LORACCS
 This is the Python code to run the LOESS Radiometric Correction for Contiguous Scenes (LORACCS). 
 
-The paper corresponding to this work is published in the open source International 
-Journal of Applied Earth Observations and Geoinformation:
-https://authors.elsevier.com/sd/article/S0303-2434(20)30933-8
-
 LORACCS was developed to create seamless mosaics using Planet Dove imagery from the same day,
 though it should work with other image sources, too.  It is mostly beneficial when trying to 
 mosaic images from different Dove satellites. The scenes should overlap, and the overlapping 
 area should be representative of the full scene  (for example, if the image is mostly forest,
 the overlap area should have a lot of forest).
+
+The paper corresponding to this work is published in the open source International 
+Journal of Applied Earth Observations and Geoinformation:
+https://authors.elsevier.com/sd/article/S0303-2434(20)30933-8
+
+For questions or issues, please contact Sarah: wegmueller@wisc.edu
 
 # Installation
 LORACCS is formatted as a python class for ease of use, and can be run by simply downloading 
