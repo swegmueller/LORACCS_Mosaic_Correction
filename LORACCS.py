@@ -84,6 +84,7 @@ class LORACCS():
             with rasterio.Env():
                 profile = tgt_img_2.profile
                 profile.update(nodata=0)
+                profile.update(dtype='uint16')
 
                 if num == 0:
                     with rasterio.open(loraccs_img_fp, 'w', **profile) as dst:
