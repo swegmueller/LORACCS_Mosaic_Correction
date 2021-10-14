@@ -11,6 +11,10 @@ The paper corresponding to this work is published in the open source Internation
 Journal of Applied Earth Observations and Geoinformation:
 https://authors.elsevier.com/sd/article/S0303-2434(20)30933-8
 
+Of note: the current code removes the linear interpolation section (in the paper, section 3.2, 
+list item 5) becuase updates to the LOESS package now allow for predictions. The code was 
+updated to use this feature and improve the resulting model.
+
 For questions or issues, please contact Sarah: wegmueller@wisc.edu
 
 # Installation
